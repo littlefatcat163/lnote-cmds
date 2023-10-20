@@ -1,0 +1,22 @@
+{
+  "name": "lnote-scripts",
+  "version": "1.0.0-alpha",
+  "description": "",
+  "main": "index.js",
+  "bin": {
+    "lnote-scripts": "./bin/lnote-scripts.mjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/littlefatcat163/lnote-scripts.git"
+  },
+  "author": "littlefatcat",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/littlefatcat163/lnote-scripts/issues"
+  },
+  "homepage": "https://github.com/littlefatcat163/lnote-scripts#readme",
+  "devDependencies": {
+    "cross-spawn": "^7.0.3"
+  }
+}
