@@ -9,14 +9,14 @@ const script = args.shift()
 const strategy = {
     start() {
         const [ , port = 4000 ] = args
-        spawn.sync('npx', ['hexo', 'server', '-p', port, '--config', '_dev.yml'], { stdio: 'inherit' })
+        spawn.sync('npx', ['hexo', 'lfluid-server', '-p', port, '--config', '_dev.yml'], { stdio: 'inherit' })
     },
     debug() {
         const [ , port = 4000 ] = args
-        spawn.sync('npx', ['hexo', 'server', '-p', port, '--config', '_dev.yml', '--debug'], { stdio: 'inherit' })
+        spawn.sync('npx', ['hexo', 'lfluid-start', '-p', port, '--config', '_dev.yml', '--debug'], { stdio: 'inherit' })
     },
     build() {
-        spawn.sync('npx', ['hexo', 'clean', '&&', 'hexo', 'generate'], { stdio: 'inherit' })
+        spawn.sync('npx', ['hexo', 'clean', '&&', 'hexo', 'lfluid-build'], { stdio: 'inherit' })
     },
     clean() {
         spawn.sync('npx', ['hexo', 'clean'], { stdio: 'inherit' })
