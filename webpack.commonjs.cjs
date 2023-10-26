@@ -5,20 +5,18 @@ const common = require('./webpack.common.cjs')
 module.exports = merge(common, {
     mode: 'production',
     entry: {
-        'lnote-scripts': './src/lnote-scripts.ts'
+        'lnote-eachUtil': './src/lnote-eachUtil.ts'
     },
     output: {
-        filename: '[name].js',
-        path: path.resolve(__dirname, 'bin'),
+        filename: '[name].cjs',
+        path: path.resolve(__dirname, 'dist'),
         clean: true,
-        chunkFormat: 'module',
-        module: true,
         library: {
-            type: 'module'
+            type: 'commonjs'
         }
     },
     experiments: {
-        outputModule: true
+        outputModule: false
     },
-    externalsType: 'module',
+    externalsType: 'commonjs',
 });

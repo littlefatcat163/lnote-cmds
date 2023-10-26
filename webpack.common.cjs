@@ -1,29 +1,12 @@
-const path = require('path')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const webpack = require('webpack')
 
 module.exports = {
     target: 'node',
-    entry: {
-        'lnote-scripts': './src/lnote-scripts.ts'
-    },
-    output: {
-        filename: '[name].js',
-        path: path.resolve(__dirname, 'dist'),
-        clean: true,
-        chunkFormat: 'module',
-        module: true,
-        library: {
-            type: 'module'
-        }
-    },
-    experiments: {
-        outputModule: true
-    },
-    externalsType: 'module',
     externals: {
         lodash: 'lodash',
-        'cross-spawn': 'cross-spawn'
+        'cross-spawn': 'cross-spawn',
+        systeminformation: 'systeminformation'
     },
     module: {
         rules: [
@@ -39,8 +22,8 @@ module.exports = {
             },
             {
                 test: /\.ts$/,
+                exclude: /node_modules/,
                 use: 'ts-loader',
-                exclude: /node_modules/
             },
         ]
     },
