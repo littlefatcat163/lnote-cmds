@@ -32,7 +32,7 @@ const strategy = {
     },
     debug({ command, options, args }: StrategyPayload) {
         const [, port = '4000'] = __args
-        spawn.sync(command, [...args, port, '--debug'], options)
+        spawn.sync(command, [...args, port], options)
     },
     build({ command, options, args }: StrategyPayload) {
         spawn.sync(command, args, options)

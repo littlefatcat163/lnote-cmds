@@ -23,12 +23,12 @@ describe('test generate', () => {
             debug: {
                 command,
                 options,
-                args: ['hexo', 'bd6810898c6d3aaebc9a8c779bfedbdfdc3dac44d6e38d9624b7a80d851dfd230ff03739119d1df9bf3f2497604e789969d1846316c2853ba45f961b77e69614', '-p']
+                args: ['hexo', 'bd6810898c6d3aaebc9a8c779bfedbdfdc3dac44d6e38d9624b7a80d851dfd230ff03739119d1df9bf3f2497604e789969d1846316c2853ba45f961b77e69614', '--debug', '-p']
             },
             build: {
                 command,
                 options,
-                args: ['hexo', 'clean', '&&', 'hexo', '62ca25dbe39babfbdb48542f55146778943cff2b6ad7becf510b4263caebdf00a94ee0e8199f7a571990f1f25077a4c7ec65e22ae495a90caf7b380c95682bf2', '-p']
+                args: ['hexo', '62ca25dbe39babfbdb48542f55146778943cff2b6ad7becf510b4263caebdf00a94ee0e8199f7a571990f1f25077a4c7ec65e22ae495a90caf7b380c95682bf2']
             },
             clean: {
                 command,
@@ -89,12 +89,12 @@ describe('target generate', () => {
             debug: {
                 command,
                 options,
-                args: ['hexo', 'bd6810898c6d3aaebc9a8c779bfedbdfdc3dac44d6e38d9624b7a80d851dfd230ff03739119d1df9bf3f2497604e789969d1846316c2853ba45f961b77e69614', '-p']
+                args: ['hexo', 'bd6810898c6d3aaebc9a8c779bfedbdfdc3dac44d6e38d9624b7a80d851dfd230ff03739119d1df9bf3f2497604e789969d1846316c2853ba45f961b77e69614', '--debug', '-p']
             },
             build: {
                 command,
                 options,
-                args: ['hexo', 'clean', '&&', 'hexo', '62ca25dbe39babfbdb48542f55146778943cff2b6ad7becf510b4263caebdf00a94ee0e8199f7a571990f1f25077a4c7ec65e22ae495a90caf7b380c95682bf2', '-p']
+                args: ['hexo', '62ca25dbe39babfbdb48542f55146778943cff2b6ad7becf510b4263caebdf00a94ee0e8199f7a571990f1f25077a4c7ec65e22ae495a90caf7b380c95682bf2']
             },
             clean: {
                 command,
