@@ -26,7 +26,10 @@ type StrategyPayload = {
 }
 
 const strategy = {
-    start({ command, options, args }: StrategyPayload) {
+    start({ command, options, args }: StrategyPayload, cmdCtx: any) {
+        const cleanCmd = cmdCtx.clean as StrategyPayload
+        spawn.sync(cleanCmd.command, cleanCmd.args, cleanCmd.options)
+
         const [, port = '4000'] = __args
         spawn.sync(command, [...args, port], options)
     },
@@ -34,7 +37,10 @@ const strategy = {
         const [, port = '4000'] = __args
         spawn.sync(command, [...args, port], options)
     },
-    build({ command, options, args }: StrategyPayload) {
+    build({ command, options, args }: StrategyPayload, cmdCtx: any) {
+        const cleanCmd = cmdCtx.clean as StrategyPayload
+        spawn.sync(cleanCmd.command, cleanCmd.args, cleanCmd.options)
+        
         spawn.sync(command, args, options)
     },
     clean({ command, options, args }: StrategyPayload) {
@@ -65,7 +71,8 @@ async function runCommand() {
     if (Object.keys(strategy).includes(script)) {
         try {
             await validateLicenses(readLicenses())
-            strategy[script](cmdEnc()[script])
+            const cmdCtx = cmdEnc()
+            strategy[script](cmdCtx[script], cmdCtx)
         } catch (error) {
             console.log(chalk.red(error))
         }
