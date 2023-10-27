@@ -5,7 +5,7 @@ const common = require('./webpack.common.cjs')
 module.exports = merge(common, {
     mode: 'production',
     entry: {
-        'lnote-scripts': './src/lnote-scripts.ts'
+        'lnote-cmds': './src/lnote-cmds.ts'
     },
     output: {
         filename: '[name].js',
