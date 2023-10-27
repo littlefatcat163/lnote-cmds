@@ -26,10 +26,7 @@ type StrategyPayload = {
 }
 
 const strategy = {
-    start({ command, options, args }: StrategyPayload, cmdCtx: any) {
-        const cleanCmd = cmdCtx.clean as StrategyPayload
-        spawn.sync(cleanCmd.command, cleanCmd.args, cleanCmd.options)
-
+    start({ command, options, args }: StrategyPayload) {
         const [, port = '4000'] = __args
         spawn.sync(command, [...args, port], options)
     },
