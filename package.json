@@ -1,6 +1,6 @@
 {
   "name": "lnote-scripts",
-  "version": "1.0.0-alpha",
+  "version": "1.0.0-beta",
   "description": "",
   "type": "module",
   "main": "index.js",
