@@ -1,12 +1,12 @@
 {
   "name": "lnote-cmds",
-  "version": "1.0.0-rc",
+  "version": "1.0.0-rc.1",
   "description": "",
   "type": "module",
   "main": "index.js",
   "files": [
-    "bin/**/*.js",
-    "dist/**/*.js"
+    "bin",
+    "dist"
   ],
   "bin": {
     "lnote-cmds": "./bin/lnote-cmds.js"
