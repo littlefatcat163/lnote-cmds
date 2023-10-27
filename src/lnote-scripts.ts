@@ -1,6 +1,6 @@
 import spawn from 'cross-spawn'
 import type { SpawnOptions } from 'child_process'
-import yaml from 'js-yaml'
+import yaml from 'yaml'
 import path from 'path'
 import fs from 'fs'
 import chalk from 'chalk'
@@ -12,7 +12,7 @@ function readLicenses(): string[] {
         const generatePath = path.resolve(process.cwd())
         const enc = readLicenseEnc()
         const configPath = `${generatePath}/${enc.filename}`
-        const config: any = yaml.load(fs.readFileSync(configPath, enc.encode))
+        const config: any = yaml.parse(fs.readFileSync(configPath, enc.encode))
         return config.lnote_licenses
     } catch (error) {
         return []
