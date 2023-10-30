@@ -1,6 +1,6 @@
 import CryptoJS from 'crypto-js'
 import { createSecret } from 'create-lnote/src/encDec'
-import { encryptData } from 'create-lnote/src/generate'
+import { encryptData, hexoConsoleEnc } from 'create-lnote/src/generate'
 import { readLicenseEnc, cmdEnc, scriptWordingEnc } from '../generate'
 
 describe('test generate', () => {
@@ -14,21 +14,22 @@ describe('test generate', () => {
     test('cmdEnc', () => {
         const command = 'npx'
         const options = { stdio: 'inherit' }
+        const hexoConsole = hexoConsoleEnc()
         const warnings = {
             start: {
                 command,
                 options,
-                args: ['hexo', 'bd6810898c6d3aaebc9a8c779bfedbdfdc3dac44d6e38d9624b7a80d851dfd230ff03739119d1df9bf3f2497604e789969d1846316c2853ba45f961b77e69614', '-p']
+                args: ['hexo', hexoConsole.start.cmdName, '-p']
             },
             debug: {
                 command,
                 options,
-                args: ['hexo', 'bd6810898c6d3aaebc9a8c779bfedbdfdc3dac44d6e38d9624b7a80d851dfd230ff03739119d1df9bf3f2497604e789969d1846316c2853ba45f961b77e69614', '--debug', '-p']
+                args: ['hexo', hexoConsole.start.cmdName, '--debug', '-p']
             },
             build: {
                 command,
                 options,
-                args: ['hexo', '62ca25dbe39babfbdb48542f55146778943cff2b6ad7becf510b4263caebdf00a94ee0e8199f7a571990f1f25077a4c7ec65e22ae495a90caf7b380c95682bf2']
+                args: ['hexo', hexoConsole.build.cmdName]
             },
             clean: {
                 command,
@@ -80,21 +81,22 @@ describe('target generate', () => {
         const secret = createSecret()
         const command = 'npx'
         const options = { stdio: 'inherit' }
+        const hexoConsole = hexoConsoleEnc()
         const warnings = {
             start: {
                 command,
                 options,
-                args: ['hexo', 'bd6810898c6d3aaebc9a8c779bfedbdfdc3dac44d6e38d9624b7a80d851dfd230ff03739119d1df9bf3f2497604e789969d1846316c2853ba45f961b77e69614', '-p']
+                args: ['hexo', hexoConsole.start.cmdName, '-p']
             },
             debug: {
                 command,
                 options,
-                args: ['hexo', 'bd6810898c6d3aaebc9a8c779bfedbdfdc3dac44d6e38d9624b7a80d851dfd230ff03739119d1df9bf3f2497604e789969d1846316c2853ba45f961b77e69614', '--debug', '-p']
+                args: ['hexo', hexoConsole.start.cmdName, '--debug', '-p']
             },
             build: {
                 command,
                 options,
-                args: ['hexo', '62ca25dbe39babfbdb48542f55146778943cff2b6ad7becf510b4263caebdf00a94ee0e8199f7a571990f1f25077a4c7ec65e22ae495a90caf7b380c95682bf2']
+                args: ['hexo', hexoConsole.build.cmdName]
             },
             clean: {
                 command,
