@@ -5,7 +5,7 @@
   "type": "module",
   "main": "index.js",
   "files": [
-    "bin"
+    "bin/*.js"
   ],
   "bin": {
     "lnote-cmds": "./bin/lnote-cmds.js"
