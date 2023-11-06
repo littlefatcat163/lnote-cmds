@@ -1,6 +1,6 @@
 {
   "name": "lnote-cmds",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "type": "module",
   "main": "index.js",
@@ -25,6 +25,7 @@
     "cross-spawn": "^7.0.3",
     "lodash": "^4.17.21",
     "systeminformation": "^5.21.13",
+    "this-file": "^2.0.3",
     "yaml": "^2.3.3"
   },
   "devDependencies": {

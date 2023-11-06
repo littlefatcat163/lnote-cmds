@@ -6,24 +6,15 @@ module.exports = {
     externals: {
         lodash: 'lodash',
         'cross-spawn': 'cross-spawn',
-        systeminformation: 'systeminformation'
+        systeminformation: 'systeminformation',
+        'this-file': 'this-file'
     },
     module: {
         rules: [
-            /* {
-                test: /\.m?js$/,
-                exclude: /node_modules/,
-                use: {
-                    loader: 'babel-loader',
-                    options: {
-                        presets: ['@babel/preset-env']
-                    }
-                }
-            }, */
             {
                 test: /\.ts$/,
                 exclude: /node_modules/,
-                use: 'ts-loader',
+                use: 'ts-loader'
             },
         ]
     },
