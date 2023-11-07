@@ -7,7 +7,7 @@ module.exports = {
         lodash: 'lodash',
         'cross-spawn': 'cross-spawn',
         systeminformation: 'systeminformation',
-        'this-file': 'this-file'
+        'lnote-esm': 'lnote-esm'
     },
     module: {
         rules: [
