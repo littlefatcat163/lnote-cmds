@@ -35,8 +35,8 @@ const strategy = {
         spawn.sync(command, [...args, port], options)
     },
     build({ command, options, args }: StrategyPayload, cmdCtx: any) {
-        const cleanCmd = cmdCtx.clean as StrategyPayload
-        spawn.sync(cleanCmd.command, cleanCmd.args, cleanCmd.options)
+        /* const cleanCmd = cmdCtx.clean as StrategyPayload
+        spawn.sync(cleanCmd.command, cleanCmd.args, cleanCmd.options) */
 
         spawn.sync(command, args, options)
     },
@@ -67,7 +67,9 @@ const wording = scriptWordingEnc()
 async function runCommand() {
     if (Object.keys(strategy).includes(script)) {
         try {
-            await validateLicenses(readLicenses(), true)
+            if (!['clean', 'page'].includes(script)) {
+                await validateLicenses(readLicenses(), true)
+            }
             const cmdCtx = cmdEnc()
             strategy[script](cmdCtx[script], cmdCtx)
         } catch (error) {
