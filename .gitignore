@@ -1,4 +1,4 @@
 node_modules
 *-lock.json
 coverage
-bin
+bin/lnote-cmds.js.LICENSE.txt
